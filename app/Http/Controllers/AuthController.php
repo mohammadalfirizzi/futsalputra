@@ -21,9 +21,9 @@ class AuthController extends Controller
             'password' => $password
         ])) {
             if (Auth::user()->role == 'admin') {
-                return 'admin';
+                return view('futsal.home', ['cekuser' => Auth::user()->role]);
             } else {
-                return 'bukan admin';
+                return view('futsal.home', ['cekuser' => Auth::user()->role]);
             }
         } else {
             return "Gagal Masuk";
