@@ -28,3 +28,4 @@ Route::post('/find', [FutsalController::class, 'checkFind'])->name('checkFind');
 Route::post('/booking', [FutsalController::class, 'checkBooking'])->name('checkBooking');
 Route::get('/daftarbooking', [FutsalController::class, 'daftarbooking'])->name('daftarbooking');
 Route::get('/riwayattransaksi', [FutsalController::class, 'riwayattransaksi'])->name('riwayattransaksi');
+Route::get('/daftarlapangan', [FutsalController::class, 'daftarlapangan'])->name('daftarlapangan');

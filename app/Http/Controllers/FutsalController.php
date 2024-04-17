@@ -113,4 +113,13 @@ class FutsalController extends Controller
             ->paginate(2);
         return view('futsal.riwayattransaksi', ['data' => $data]);
     }
+
+    public function daftarlapangan()
+    {
+        $data = DB::table('courts')
+            ->join('court_types', 'courts.court_type', '=', 'court_types.id')
+            ->select('courts.*', 'court_types.name as court_type_name')
+            ->get();
+        return view('futsal.daftarlapangan', ['data' => $data]);
+    }
 }

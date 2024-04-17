@@ -51,30 +51,27 @@
 
     <div class="container mt-5">
         <div class="row">
-            <h1>Daftar Booking</h1>
+            <h1>Daftar Lapangan</h1>
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Tanggal</th>
+                        <th scope="col">No</th>
+                        <th scope="col">Type Lapangan</th>
                         <th scope="col">Nama Lapangan</th>
-                        <th scope="col">Jam Main</th>
-                        <th scope="col">Lama Main</th>
-                        <th scope="col">Nama Penyewa</th>
+                        <th scope="col">Harga Lapangan</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($data as $d)
                     <tr>
-                        <th>{{$d->created_at}}</th>
-                        <td>{{$d->court_type_name}} - {{$d->court_name}}</td>
-                        <td>{{$d->starttime}}</td>
-                        <td>{{$d->duration}}</td>
+                        <th>{{$loop->iteration}}</th>
+                        <td>{{$d->court_type_name}}</td>
                         <td>{{$d->name}}</td>
+                        <td>@currency($d->price)</td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-            {{$data->links('pagination::bootstrap-4')}}
         </div>
     </div>
     <!-- Ini buat Footer -->
