@@ -20,7 +20,11 @@ class AuthController extends Controller
             'username' => $username,
             'password' => $password
         ])) {
-            return "Berhasil Masuk";
+            if (Auth::user()->role == 'admin') {
+                return 'admin';
+            } else {
+                return 'bukan admin';
+            }
         } else {
             return "Gagal Masuk";
         }

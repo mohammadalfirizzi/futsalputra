@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 
@@ -10,7 +11,8 @@ class FutsalController extends Controller
 {
     public function home()
     {
-        return view('futsal.home');
+        $cekuser = DB::table('users')->first()->role;
+        return view('futsal.home', ['cekuser' => $cekuser]);
     }
 
     public function find()

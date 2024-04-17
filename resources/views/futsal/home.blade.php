@@ -41,9 +41,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Booking Lapangan</a>
                     </li>
+                    @if ($cekuser == 'admin')
                     <li class="nav-item">
                         <a class="nav-link" href="#">Cek Booking</a>
                     </li>
+                    @else
+                    @endif
                 </ul>
             </div>
         </div>
